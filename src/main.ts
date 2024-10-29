@@ -6,13 +6,17 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import { createVuetify } from 'vuetify/lib/framework.mjs'
+import { createVuetify } from 'vuetify'
 import 'vuetify/styles';
 import * as components from 'vuetify/components'
+import * as labs from 'vuetify/labs/components';
 import * as directives from 'vuetify/directives'
 
 const vuetify=createVuetify({
-    components,
+    components:{
+        ...components,
+        ...labs
+    },
     directives
 });
 
