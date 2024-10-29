@@ -70,6 +70,9 @@ export default {
         </div>
       </v-col>
     </v-row>
+    <v-row class="justify-center">
+      <p>@LevelUpSport , Inc. All Right Reserved</p>
+    </v-row>
      </v-container>
 
   </v-footer>

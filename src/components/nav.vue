@@ -1,8 +1,9 @@
 <script setup lang="ts">
   import logo from '@/assets/logo.png';
   import search from '@/assets/search.png';
-  import shopbag from '@/assets/shopping-bag.png';
-  import user from '@/assets/user_icon.png';
+  import SvgIcon from '@jamescoyle/vue-icon'
+  import { mdiAccount, mdiShoppingOutline } from '@mdi/js'  
+
 </script>
 
 <template>
@@ -22,10 +23,10 @@
       </div>
       <div class="nav-right">
         <RouterLink :to="{ name: 'home' }" class="icon">
-          <img :src="shopbag" alt="Shopping Bag" />
+          <SvgIcon type="mdi" :path="mdiShoppingOutline" class="text-white"/>
         </RouterLink>
         <RouterLink :to="{ name: 'home' }" class="icon">
-          <img :src="user" alt="User" />
+          <SvgIcon type="mdi" :path="mdiAccount" class="text-white"/>
         </RouterLink>
       </div>
     </nav>

@@ -1,13 +1,24 @@
 <script setup lang="ts">
+
+  import Why from '@/components/whyShop.vue'
+  import Promotion from '@/components/promotion.vue';
+import Trending from '@/components/trending.vue';
+import Links from '@/components/Links.vue';
+
 import CardSlider from '@/components/cardslider.vue';
 import HeroSlider from '@/components/heroSlider.vue';
 import Why from '@/components/whyShop.vue'
 import promo from '@/assets/4.png'
+
 </script>
 
 <template>
   <main>
     <v-container>
+
+      <Trending/>
+      <Promotion/>
+
       <HeroSlider/>
       
       
@@ -37,11 +48,10 @@ import promo from '@/assets/4.png'
       <h1 class="heading">WHY SHOP WITH US</h1>
     
     </div>
-      <Why/>
-     
-     <div class="links">
 
-     </div>
+      <Why/>
+      <Links/>
+
     </v-container>
   </main>
 </template>

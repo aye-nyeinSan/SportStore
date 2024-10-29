@@ -47,7 +47,7 @@ const submit = handleSubmit(values => {
 <template>
   <v-container class="form-container">
     <div class="form-wrapper">
-      <h2 class="form-title">Register</h2>
+      <h2 class="form-title">Log In</h2>
       <form @submit.prevent="submit" class="form-content">
         <v-text-field
           v-model="email.value.value"
@@ -62,22 +62,21 @@ const submit = handleSubmit(values => {
           label="Password"
           class="form-input"
         ></v-text-field>
-
-        <v-text-field
-          v-model="email.value.value"
-          :error-messages="email.errorMessage.value"
-          label="Confirm Password"
-          class="form-input"
-        ></v-text-field>
         
         <div class="text-sm">
-                            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">
-                                Forgot password?
-                            </a>
+            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">
+                Forgot password?
+            </a>
         </div>
         <v-btn type="submit" class="form-button">LOG IN</v-btn>
       </form>
+          <p class="mt-8 text-center"> Not a member yet? 
+            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Register Now</a>
+          </p>
+    
     </div>
+  
+             
   </v-container>
 </template>
 
