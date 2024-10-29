@@ -3,6 +3,7 @@
   import search from '@/assets/search.png';
   import SvgIcon from '@jamescoyle/vue-icon'
   import { mdiAccount, mdiShoppingOutline } from '@mdi/js'  
+  import PeopleNav from '@/components/people.vue'
 
 </script>
 
@@ -30,13 +31,7 @@
         </RouterLink>
       </div>
     </nav>
-
-    <!-- Second navigation: Category links -->
-    <nav class="nav-bottom">
-      <RouterLink :to="{ name: 'home' }" class="nav-link">MEN</RouterLink>
-      <RouterLink :to="{ name: 'home' }" class="nav-link">WOMEN</RouterLink>
-      <RouterLink :to="{ name: 'home' }" class="nav-link">KIDS</RouterLink>
-    </nav>
+      <PeopleNav/>
   </div>
 </template>
 
