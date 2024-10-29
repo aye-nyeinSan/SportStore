@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import RegisterView from '@/views/RegisterForm.vue'
 import LoginView from '@/views/LoginForm.vue'
+import ProductPage from '@/views/ProductPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,7 +29,16 @@ const router = createRouter({
       path:'/login',
       name:'login',
       component:LoginView
-    }
+    },
+    {
+      // path: '/countrydetails/:id',
+      path: '/productDetails',
+      name: 'ProductDetails',
+      component: ProductPage,
+      // props: (route) => ({
+      //   id: parseInt(route.params.id.toString()),
+      // }),
+    },
   ],
 })
 
