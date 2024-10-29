@@ -1,23 +1,18 @@
 <script setup lang="ts">
   import Why from '@/components/whyShop.vue'
-  import promo from '@/assets/4.png'
+  import Promotion from '@/components/promotion.vue';
+import Trending from '@/components/trending.vue';
+import Links from '@/components/Links.vue';
 </script>
 
 <template>
   <main>
     <v-container>
-      
-      <div class="promotion">
-        <img :src="promo" alt="" 
-        :width="100"
-        width="100%"
-        aspect-ratio="16/9">
-      </div>
+      <Trending/>
+      <Promotion/>
       <Why/>
-     
-     <div class="links">
+      <Links/>
 
-     </div>
     </v-container>
   </main>
 </template>
