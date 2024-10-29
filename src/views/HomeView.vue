@@ -7,7 +7,7 @@ import Links from '@/components/Links.vue';
 
 import CardSlider from '@/components/cardslider.vue';
 import HeroSlider from '@/components/heroSlider.vue';
-import Why from '@/components/whyShop.vue'
+
 import promo from '@/assets/4.png'
 
 </script>
@@ -15,9 +15,6 @@ import promo from '@/assets/4.png'
 <template>
   <main>
     <v-container>
-
-      <Trending/>
-      <Promotion/>
 
       <HeroSlider/>
       
@@ -35,19 +32,9 @@ import promo from '@/assets/4.png'
     
     </div>
       <CardSlider/>
-   
-      
 
-      <div class="promotion">
-        <img :src="promo" alt="" 
-        :width="100"
-        width="100%"
-        aspect-ratio="16/9">
-      </div>
-        <div class="heading-section">
-      <h1 class="heading">WHY SHOP WITH US</h1>
-    
-    </div>
+      <Trending/>
+      <Promotion/>
 
       <Why/>
       <Links/>

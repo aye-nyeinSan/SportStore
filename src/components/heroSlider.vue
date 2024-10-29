@@ -4,8 +4,8 @@ import png2 from '@/assets/2.png';
 import png3 from '@/assets/3.png';
 </script>
 <template>
-  <v-app>
-    <v-container>
+ 
+   
       <v-carousel show-arrows>
         <template v-slot:prev="{ props }">
           <v-btn
@@ -40,6 +40,6 @@ import png3 from '@/assets/3.png';
           cover
         ></v-carousel-item>
       </v-carousel>
-    </v-container>
-  </v-app>
+  
+ 
 </template>

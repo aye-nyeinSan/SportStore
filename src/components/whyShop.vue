@@ -11,8 +11,8 @@ import img4 from '@/assets/quality.png'
       <v-row>
           <v-col cols="12" md="3">
             <v-img
-                :width="300"
-                aspect-ratio="16/9"
+                :width="200"
+                aspect-ratio="12/9"
                 center
                 :src=img1
               ></v-img>
@@ -24,8 +24,8 @@ import img4 from '@/assets/quality.png'
 
           <v-col cols="12" md="3">
             <v-img
-                :width="300"
-                aspect-ratio="16/9"
+                :width="200"
+                aspect-ratio="12/9"
                 center
                 :src=img2
               ></v-img>
@@ -37,8 +37,8 @@ import img4 from '@/assets/quality.png'
 
           <v-col cols="12" md="3">
             <v-img
-                :width="300"
-                aspect-ratio="16/9"
+                :width="200"
+                aspect-ratio="12/9"
                 center
                 :src=img3
               ></v-img>
@@ -50,8 +50,8 @@ import img4 from '@/assets/quality.png'
 
           <v-col cols="12" md="3">
             <v-img
-                :width="300"
-                aspect-ratio="16/9"
+                :width="200"
+                aspect-ratio="12/9"
                 center
                 :src=img4
               ></v-img>
