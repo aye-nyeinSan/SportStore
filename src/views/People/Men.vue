@@ -4,6 +4,7 @@ import Card from '@/components/card.vue';
 import Footer from '@/components/footer.vue';
 import Filter from '@/components/filter.vue';
 import PeopleNav from '@/components/people.vue';
+import ItemCategory from '@/components/ItemCategory.vue';
 
 const components = {
   Card,
@@ -47,10 +48,8 @@ const data = () => ({
 <template>
   <v-container fluid>
     <div class="text-center mb-8">
-      <h1 class="category-title">{{MEN}}</h1>
-      <div class="category-options">
-        <span>shoes</span> | <span>Shirt</span> | <span>Shorts</span>
-      </div>
+      <h1 class="category-title">{MEN}</h1>
+      <ItemCategory/>
     </div>
 
     <v-row>
