@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import png1 from '@/assets/1.png';
+import png2 from '@/assets/2.png';
+import png3 from '@/assets/3.png';
+</script>
 <template>
   <v-app>
     <v-container>
@@ -21,17 +26,17 @@
           </v-btn>
         </template>
         <v-carousel-item
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+          :src=png1
           cover
         ></v-carousel-item>
 
         <v-carousel-item
-          src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
+          :src=png2
           cover
         ></v-carousel-item>
 
         <v-carousel-item
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          :src=png3
           cover
         ></v-carousel-item>
       </v-carousel>
