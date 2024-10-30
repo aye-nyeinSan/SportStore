@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Card from './card.vue';
+import Card from '@/components/card.vue';
 import { type Product } from '@/types';
 import ProductService from '@/services/ProductService';
 import { onMounted, watchEffect,ref} from 'vue';
@@ -10,7 +10,8 @@ const products=ref<Product[] | null>(null)
 onMounted(()=>{
     ProductService.getProducts()
     .then((response)=>{
-      products.value=response.data
+
+      products.value=response.data.slice(0, 10)
       console.log(products.value)
     })
     .catch((err)=>{
