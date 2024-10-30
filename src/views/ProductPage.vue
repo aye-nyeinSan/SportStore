@@ -58,6 +58,7 @@ const addToCart = () => {
 </script>
 
 <template>
+
   <div v-if="product" class="d-flex flex-row mb-6 justify-center align-center">
     <v-sheet class="ma-2 pa-2">
       <v-img :src="product.image" width="300" />
@@ -92,6 +93,7 @@ const addToCart = () => {
     <h3 class="mb-4">Related Products</h3>
     <CardSlider class="mb-5" />
   </v-container>
+
 </template>
 
 <style scoped>
