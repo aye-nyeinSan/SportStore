@@ -10,9 +10,10 @@ export interface Product{
     colors: string[]
 }
 
-export interface Category{
- id: number,
- name: string
+export interface Category {
+  id: number
+  categoryName: string
+  name: string
 }
 
 export interface Bill{
