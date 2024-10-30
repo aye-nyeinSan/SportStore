@@ -59,59 +59,40 @@ const addToCart = () => {
 
 <template>
 
-    <div v-if="product"
-     class="d-flex flex-row mb-6 justify-center align-center">
-        <v-sheet class="ma-2 pa-2">
-            <v-img :src="product.image" width="300">
-            </v-img>
-        </v-sheet>
-        <v-sheet class="ma-2 pa-2">
-            <h2>{{product.name}}</h2>
-            <p>{{product.category.categoryName}} {{ product.category.kind }}</p>
+  <div v-if="product" class="d-flex flex-row mb-6 justify-center align-center">
+    <v-sheet class="ma-2 pa-2">
+      <v-img :src="product.image" width="300" />
+    </v-sheet>
+    <v-sheet class="ma-2 pa-2">
+      <h2>{{ product.name }}</h2>
+                  <p>{{product.category.categoryName}} {{ product.category.kind }}</p>
+      <p>${{ product.price }}</p>
+      <p>---------------------------------------------------------------</p>
 
-            <p> $ {{product.price}}</p>
-            <p>-------------------------------------</p>
+      <p>Color</p>
+      <div class="d-flex mb-5">
+        <v-btn
+          v-for="color in colors"
+          :key="color.name"
+          :style="{ backgroundColor: color.value, color: '#fff', margin: '0 4px' }"
+          @click="selectedColor.value = color.value"
+        ></v-btn>
+      </div>
 
-            <p>Color</p>
-            <div class="d-flex mb-5">
-                <v-btn
-                v-for="color in colors"
-                :key="color.name"
-                :style="{ backgroundColor: color.value, color: '#fff', margin: '0 4px' }"
-                @click="selectedColor = color.value"
-                >
-                </v-btn>
-            </div>
+      <p>Select Size</p>
+      <v-select v-model="selectedSize" :items="sizes" outlined class="mt-2" />
 
-            <p>Select Size</p>
-            <v-select
-                v-model="selectedSize"
-                :items="sizes"
-                outlined
-                class="mt-2"
-            ></v-select>
+      <p>Quantity</p>
+      <v-number-input v-model="quantity" controlVariant="split" outlined />
 
+      <v-btn class="mt-4" @click="addToCart">Add To Cart</v-btn>
+    </v-sheet>
+  </div>
 
-            <v-number-input
-            :reverse="false"
-            controlVariant="split"
-            :hideInput="false"
-            :inset="false"
-                >
-            </v-number-input>
-
-            <v-btn class="mt-4">Add To Cart</v-btn>
-        </v-sheet>
-    </div>
-
-    <v-container>
-        <h3 class="mb-4">Related Products</h3>
-        <CardSlider class="mb-5"></CardSlider>
-    </v-container>
-       
-
-
-
+  <v-container>
+    <h3 class="mb-4">Related Products</h3>
+    <CardSlider class="mb-5" />
+  </v-container>
 
 </template>
 
