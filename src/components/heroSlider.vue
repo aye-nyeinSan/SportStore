@@ -4,8 +4,7 @@ import png2 from '@/assets/2.png';
 import png3 from '@/assets/3.png';
 </script>
 <template>
- 
-   
+
       <v-carousel show-arrows>
         <template v-slot:prev="{ props }">
           <v-btn
@@ -13,7 +12,6 @@ import png3 from '@/assets/3.png';
             @click="props.onClick"
             :style="{ backgroundColor: 'transparent', boxShadow: 'none',color: 'white'  }"
           >
-            <
           </v-btn>
         </template>
         <template v-slot:next="{ props }">
