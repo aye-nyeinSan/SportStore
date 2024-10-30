@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <RouterLink :to="{ name: 'home' }" class="icon">
+        <RouterLink :to="{ name: 'basket' }" class="icon">
           <SvgIcon type="mdi" :path="mdiShoppingOutline" class="text-white"/>
         </RouterLink>
         <RouterLink :to="{ name: 'home' }" class="icon">
