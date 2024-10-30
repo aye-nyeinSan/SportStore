@@ -24,6 +24,7 @@ onMounted(()=>{
 
 </script>
 
+
 <template>
   <v-container>
     <h1 class="text-center">MEN</h1>
