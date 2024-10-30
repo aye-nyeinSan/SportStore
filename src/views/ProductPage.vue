@@ -9,7 +9,6 @@ const colors = [
   { name: 'Blue', value: '#0000ff' },
   { name: 'Green', value: '#00ff00' }
 ];
-
 const sizes = ['S', 'M', 'L', 'XL']; 
 
 const selectedSize = ref('S')
@@ -67,8 +66,7 @@ const selectedSize = ref('S')
     </v-container>
        
 
-   
-    
+
 
 </template>
 

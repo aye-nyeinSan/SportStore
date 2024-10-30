@@ -17,20 +17,17 @@ import promo from '@/assets/4.png'
     <v-container>
 
       <HeroSlider/>
-      
-      
-         <div class="heading-section">
-      <h1 class="heading">NEW ARRIVALS</h1>
-      <p class="subheading">Get Moving, Get Grooving, Get Shopping!</p>
-    </div>
+      <div class="heading-section">
+        <h1 class="heading">NEW ARRIVALS</h1>
+        <p class="subheading">Get Moving, Get Grooving, Get Shopping!</p>
+      </div>
 
       <CardSlider/>
      
     
-          <div class="heading-section">
-      <h1 class="heading">BEST SELLER</h1>
-    
-    </div>
+      <div class="heading-section">
+          <h1 class="heading">BEST SELLER</h1>
+      </div>
       <CardSlider/>
 
       <Trending/>

@@ -1,3 +1,25 @@
+<script setup lang="ts">
+import Card from './card.vue';
+import { type Product } from '@/types';
+import ProductService from '@/services/ProductService';
+import { onMounted, watchEffect,ref} from 'vue';
+
+const products=ref<Product[] | null>(null)
+
+
+onMounted(()=>{
+  watchEffect(()=>{
+    ProductService.getProducts()
+    .then((response)=>{
+      products.value=response.data
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  })
+})
+
+</script>
 <template>
   <v-sheet class="mx-auto">
     <v-slide-group
@@ -7,7 +29,7 @@
       show-arrows
     >
       <v-slide-group-item
-        v-for="(card, index) in cards"
+        v-for="(card, index) in products"
         :key="index"
         v-slot="{ isSelected, toggle, selectedClass }"
       >
@@ -15,7 +37,7 @@
           <div @click="toggle">
             <Card
               :imageSrc="card.image"
-              :title="card.title"
+              :title="card.name"
               :description="card.description"
               :price="card.price"
             />
@@ -36,59 +58,7 @@
   </v-sheet>
 </template>
 
-<script>
-import Card from './card.vue';
 
-export default {
-  components: {
-    Card,
-  },
-  data() {
-    return {
-      model: null,
-      cards: [
-        {
-          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-          title: 'Dock',
-          description: 'A beautiful dock on the lake.',
-          price: 80,
-        },
-        {
-          image: 'https://cdn.vuetifyjs.com/images/cards/hotel.jpg',
-          title: 'Hotel',
-          description: 'A luxurious hotel room.',
-          price: 120,
-        },
-        {
-          image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
-          title: 'Sunshine',
-          description: 'A sunny day at the beach.',
-          price: 60,
-        },
-        {
-          image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
-          title: 'Sunshine',
-          description: 'A sunny day at the beach.',
-          price: 60,
-        },
-        {
-          image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
-          title: 'Sunshine',
-          description: 'A sunny day at the beach.',
-          price: 60,
-        },
-        {
-          image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
-          title: 'Sunshine',
-          description: 'A sunny day at the beach.',
-          price: 60,
-        },
-        
-      ],
-    };
-  },
-};
-</script>
 
 <style scoped>
 /* Apply flexbox to the slide group to manage spacing */
