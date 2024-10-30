@@ -27,5 +27,8 @@ export const useCartStore = defineStore('cart', {
       const item = this.cart.find(i => i.id === id)
       if (item && item.quantity > 1) item.quantity--
     },
+    clearCart() {
+      this.cart = [] // Reset the cart to an empty array
+    },
   },
 })
