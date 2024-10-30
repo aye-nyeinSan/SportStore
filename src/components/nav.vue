@@ -34,8 +34,8 @@
     <!-- Second navigation: Category links -->
     <nav class="nav-bottom">
       <RouterLink :to="{ name: 'Men' }" class="nav-link">MEN</RouterLink>
-      <RouterLink :to="{ name: 'home' }" class="nav-link">WOMEN</RouterLink>
-      <RouterLink :to="{ name: 'home' }" class="nav-link">KIDS</RouterLink>
+      <RouterLink :to="{ name: 'Women' }" class="nav-link">WOMEN</RouterLink>
+      <RouterLink :to="{ name: 'kids' }" class="nav-link">KIDS</RouterLink>
     </nav>
   </div>
 </template>

@@ -5,6 +5,8 @@ import LoginView from '@/views/LoginForm.vue'
 import ProductPage from '@/views/ProductPage.vue'
 import BasketView from '@/views/BasketView.vue'
 import MenView from '@/views/People/MenView.vue'; 
+import WomenView from '@/views/People/WomenView.vue'
+import KidsView from '@/views/People/KidsView.vue'
 
 
 const router = createRouter({
@@ -49,8 +51,18 @@ const router = createRouter({
     {
       path:'/Men',
       name:'Men',
-      component:MenView
-    }
+      component:MenView,
+    },
+    {
+      path:'/Women',
+      name:'Women',
+      component:WomenView,
+    },
+    {
+      path:'/Kids',
+      name:'kids',
+      component:KidsView,
+    },
   ],
 })
 

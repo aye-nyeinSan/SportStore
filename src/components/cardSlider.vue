@@ -89,4 +89,12 @@ onMounted(()=>{
 .v-slide-group .v-btn {
   background-color: transparent;
 }
+
+.quantity-btn :deep(.v-icon) {
+  color: black !important; /* For light theme */
+}
+
+:deep(.v-theme--dark) .quantity-btn .v-icon {
+  color: white !important;
+}
 </style>

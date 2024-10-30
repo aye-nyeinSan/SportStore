@@ -9,10 +9,8 @@ const products=ref<Product[] | null>(null)
 // Define props
 const props = defineProps<{ id: number }>();
 
-
-
 onMounted(()=>{
-  ProductService.getProductsByCategory('men')
+  ProductService.getProductsByCategory('women')
   .then((response)=>{
     products.value=response.data;
   })
@@ -26,7 +24,7 @@ onMounted(()=>{
 
 <template>
   <v-container>
-    <h1 class="text-center">MEN</h1>
+    <h1 class="text-center">WOMEN</h1>
     <ItemCategory/>
     <v-row>
       <v-col
@@ -44,14 +42,13 @@ onMounted(()=>{
           id: product.id
         }
       }">
-<v-card>
+      <v-card>
           <v-img :src="product.image" height="200" />
           <v-card-title>{{ product.name }}</v-card-title>
           <v-card-subtitle>${{ product.price }}</v-card-subtitle>
           <v-card-text>{{ product.description }}</v-card-text>
         </v-card>
-
-      </RouterLink>
+    </RouterLink>
         
       </v-col>
     </v-row>
