@@ -1,4 +1,4 @@
-import type { Product } from "@/types";
+import type { Category, Product } from "@/types";
 import apiClient from "./AxiosClient";
 
 export default{
@@ -10,6 +10,9 @@ export default{
     },
     saveProduct(product: Product){
         return apiClient.post('/api/products',product)
+    },
+    getProductsByCategory(category: string) {
+        return apiClient.get(`/api/products?category=${category}`);
     },
 
 }
