@@ -13,12 +13,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@jamescoyle/vue-icon": "^0.1.2",
+    "@mdi/js": "^7.4.47",
+    "axios": "^1.7.7",
     "pinia": "^2.2.4",
+    "vee-validate": "^4.14.4",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
     "vuetify": "^3.7.3"
   },
   "devDependencies": {
+    "@mdi/font": "^7.4.47",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.16.11",
     "@vitejs/plugin-vue": "^5.1.4",

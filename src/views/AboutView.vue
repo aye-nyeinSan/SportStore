@@ -1,15 +1,20 @@
+<script setup lang="ts">
+import Nav from '@/components/nav.vue';
+import Footer from '@/components/footer.vue'
+</script>
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <v-container fluid>
+      <Nav/>
+    
+    <v-footer>
+      <Footer></Footer>
+    </v-footer>
+    </v-container>
+   
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+
 </style>
