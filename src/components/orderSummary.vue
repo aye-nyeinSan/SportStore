@@ -82,4 +82,5 @@ export default defineComponent({
     return { totalPrice, itemCount, deliveryFee, handleCheckout };
   },
 });
+
 </script>
