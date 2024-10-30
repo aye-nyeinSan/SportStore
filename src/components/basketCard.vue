@@ -59,7 +59,7 @@ export default defineComponent({
 
       <v-col cols="2" class="d-flex align-center justify-center">
         <v-btn icon small @click="decrementQuantity">
-          <SvgIcon type="mdi" :path="mdiMinus" />
+          <v-icon>mdi-minus</v-icon>
         </v-btn>
         <span class="mx-2">{{ item.quantity }}</span>
         <v-btn icon small @click="incrementQuantity">
