@@ -43,8 +43,9 @@ onMounted(()=>{
         </v-sheet>
         <v-sheet class="ma-2 pa-2">
             <h2>{{product.name}}</h2>
-            <p>{{product.category}}</p>
-            <p>{{product.price}}</p>
+            <p>{{product.category.categoryName}} {{ product.category.kind }}</p>
+
+            <p> $ {{product.price}}</p>
             <p>------------------</p>
 
             <p>Color</p>

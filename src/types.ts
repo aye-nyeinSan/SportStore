@@ -12,7 +12,9 @@ export interface Product{
 
 export interface Category{
  id: number,
- name: string
+ categoryName: string,
+ kind: string
+ 
 }
 
 export interface Bill{
