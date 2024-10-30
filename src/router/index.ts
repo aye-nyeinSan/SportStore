@@ -32,13 +32,12 @@ const router = createRouter({
       component:LoginView
     },
     {
-      // path: '/countrydetails/:id',
-      path: '/productDetails',
+      path: '/products/:id',
       name: 'ProductDetails',
       component: ProductPage,
-      // props: (route) => ({
-      //   id: parseInt(route.params.id.toString()),
-      // }),
+      props: (route) => ({
+        id: route.params.id
+      }),
     },
     {
       path:'/basket',

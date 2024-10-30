@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { type Product } from '@/types';
 import CardSlider from '@/components/cardSlider.vue';
-import img1 from '@/assets/men/shirt/shm1_bl.png'
 import { VNumberInput } from 'vuetify/labs/VNumberInput'
-import { ref } from 'vue';
+import { onMounted, ref, toRefs } from 'vue';
+import ProductService from '@/services/ProductService';
    // Colors and sizes data
 const colors = [
   { name: 'Red', value: '#ff0000' },
@@ -13,19 +14,37 @@ const sizes = ['S', 'M', 'L', 'XL'];
 
 const selectedSize = ref('S')
 
+const props=defineProps<{
+    id:number
+}>();
+
+const product=ref<Product | null>(null);
+
+onMounted(()=>{
+    console.log(props.id)
+    ProductService.getProduct(props.id)
+    .then((response)=>{
+        product.value=response.data;
+        console.log(product.value)
+    })
+    .catch((error) => {
+      console.error('Error fetching product:', error.message);
+    });
+})
+
 </script>
 
 <template>
-    <div class="d-flex flex-row mb-6 justify-center align-center">
+    <div v-if="product"
+     class="d-flex flex-row mb-6 justify-center align-center">
         <v-sheet class="ma-2 pa-2">
-            <v-img :src="img1" width="300">
-                
+            <v-img :src="product.image" width="300">
             </v-img>
         </v-sheet>
         <v-sheet class="ma-2 pa-2">
-            <h2>Name</h2>
-            <p>Men's shirt</p>
-            <p>$ 1000</p>
+            <h2>{{product.name}}</h2>
+            <p>{{product.category}}</p>
+            <p>{{product.price}}</p>
             <p>------------------</p>
 
             <p>Color</p>

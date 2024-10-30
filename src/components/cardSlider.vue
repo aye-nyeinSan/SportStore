@@ -8,39 +8,32 @@ const products=ref<Product[] | null>(null)
 
 
 onMounted(()=>{
-  watchEffect(()=>{
     ProductService.getProducts()
     .then((response)=>{
       products.value=response.data
+      console.log(products.value)
     })
     .catch((err)=>{
       console.log(err)
     })
   })
-})
 
 </script>
 <template>
   <v-sheet class="mx-auto">
     <v-slide-group
       v-model="model"
-      
       selected-class="bg-success"
       show-arrows
     >
       <v-slide-group-item
-        v-for="(card, index) in products"
+        v-for="(product, index) in products"
         :key="index"
         v-slot="{ isSelected, toggle, selectedClass }"
       >
         <v-scale-transition>
           <div @click="toggle">
-            <Card
-              :imageSrc="card.image"
-              :title="card.name"
-              :description="card.description"
-              :price="card.price"
-            />
+            <Card :product="product" :id="product.id"/>
             <div class="d-flex fill-height align-center justify-center">
               <v-scale-transition>
                 <v-icon
