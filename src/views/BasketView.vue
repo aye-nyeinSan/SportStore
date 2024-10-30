@@ -2,9 +2,9 @@
 import { useCartStore } from "@/store/CartStore";
 import CartItem from "@/components/basketCard.vue";
 import OrderSummary from "@/components/orderSummary.vue";
-
+import { computed } from "vue";
 const cartStore = useCartStore();
-const cartItems = cartStore.cart;
+const cartItems = computed(() => cartStore.cartItems); 
 </script>
 
 <template>
@@ -13,7 +13,11 @@ const cartItems = cartStore.cart;
       <!-- Cart Items Section -->
       <v-col cols="12" md="8">
         <div v-if="cartItems.length === 0">Your cart is empty!</div>
-        <CartItem v-for="(item, index) in cartItems" :key="index" :item="item" />
+        <CartItem 
+          v-for="(item, index) in cartItems" 
+          :key="item.id" 
+          :item="item" 
+        />
       </v-col>
 
       <!-- Order Summary Section -->
